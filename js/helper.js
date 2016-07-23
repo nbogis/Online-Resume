@@ -104,6 +104,15 @@ var riyadh = '<div id="content">'+
     '</div>'+
     '</div>';
 
+    var HB = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading">Huntington Beach, CA</h1>'+
+      '<div>'+
+      '<p class="bodyContent"><b>Huntington Beach</b>, is where I currently live.'+
+      '</div>'+
+      '</div>';
+
   var Irvine = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -207,7 +216,10 @@ function initializeMap() {
 
     // initializes an empty array
     var locations = [];
-    
+
+    //adds the single location property from bio to the locations array
+    locations.push(bio.contacts.location);
+
     // iterates through school locations and appends each location to
     // the locations array
     for (var school=0; school < education.schools.length; school++) {
@@ -259,6 +271,11 @@ function initializeMap() {
       else if (marker.title =='St Louis, MO, USA') {
         var infoWindow = new google.maps.InfoWindow({
           content: STL
+        });
+      }
+      else if (marker.title =='Huntington Beach, CA, USA') {
+        var infoWindow = new google.maps.InfoWindow({
+          content: HB
         });
       }
       else if (marker.title =='Riyadh Saudi Arabia') {
