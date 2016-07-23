@@ -14,6 +14,7 @@ var HTMLmobile = '<li><span class="white-text">mobile</span><span class="black-t
 var HTMLemail = '<li><span class="white-text">email</span><span class="black-text">%data%</span></li>';
 var HTMLtwitter = '<li><span class="white-text">twitter</span><span class="black-text">%data%</span></li>';
 var HTMLgithub = '<li><span class="white-text">github</span><a href="#" class="black-text inline">%data%</a></li>';
+var HTMLlinkedIn = '<li><span class="white-text">LinkedIn</span><a href="#" class="black-text inline">%data%</a></li>';
 var HTMLlocation = '<li class="flex-item"><span class="white-text">location</span><span class="black-text">%data%</span></li>';
 
 var HTMLbioPic = '<img class="biopic img-responsive" src="%data%" srcset="%data1% 1x,%data2% 2x" alt ="%data3%">';
@@ -28,7 +29,7 @@ var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div> ';
 var HTMLworkLocation = '<span class="location-text">%data%</span>';
 var HTMLworkDescStart = '<ul class="desc-Start"></ul>'
-var HTMLworkDescription = '<li> %data%</li>';
+var HTMLworkDescription = '<li class="bullets"> %data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
@@ -51,7 +52,7 @@ var HTMLonlineTitle = '<a href="#">%data1% -- %data%</a>';
 var HTMLonline = '<span class="location-text"> &#128187 Online Course</span>';
 var HTMLonlineDate = '<div class="date-text">%data%</div>';
 var HTMLOnlineprojStart = '<ul class="projs"></ul>'
-var HTMLonlineprojects = '<li> %data%</li>'
+var HTMLonlineprojects = '<li class="bullets"> %data%</li>'
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -60,10 +61,9 @@ var riyadh = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Riyadh, Saudi Arabia</h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Riyadh</b>, is the capital city of <b>Saudi Arabia</b> and it is '+
-      'where I spent all of my childhood and early teenage. I went to Kindergarden, '+
-      'elementary school, and the first 2 years of middle school.' 
+      '<div">'+
+      '<p class="bodyContent"><b>Riyadh</b>, is the capital city of <b>Saudi Arabia</b> and it is '+
+      'where I grew up.'+
       '</div>'+
       '</div>';
 
@@ -71,22 +71,17 @@ var riyadh = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Makkah, Saudi Arabia</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Makkah</b>, is the holy city for Muslims and it is where I was born. '+
-    'I did not live in Makkah, but I have families there. We went visiting Makkah '+
-    'many times to visit my families and to do Islamic Rituals.'
+    '<div">'+
+    '<p class="bodyContent"><b>Makkah</b>, is the holy city for Muslims. It is where I was born and where my family are from. '+
     '</div>'+
     '</div>';
 
   var madrid = '<div id="content">'+
-    '<div id="siteNotice">'+
+    '<div class="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading">Madrid, Spain</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Madrid</b>, is the place where I spent most of my life after Saudi Arabia. ' +
-    'In Madrid, I lived my last year of middle school, all 3 years of high-school '+
-    'and 3 years of undergraduate. I attended <b>Saint Louis University</b> the first '+
-    'three undergraduate then I had to finish my degree at the main campus in <b>MO</b>. '+
+    '<div>'+
+    '<p class="bodyContent"><b>Madrid</b>, is the place is my second home country where I lived for 7 years and started collage . ' +
     '</div>'+
     '</div>';
 
@@ -94,9 +89,9 @@ var riyadh = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading">Washington, DC</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Washington</b>, is where I obtained my Masters degree in <b>Computer Engineering</b>. '+
-    'I attended the George Washington University in downtown DC. '+
+    '<div>'+
+    '<p class="bodyContent"><b>Washington</b>, is where I obtained my Masters degree in <b>Computer Engineering</b> from '+
+    'the George Washington University in downtown DC. '+
     '</div>'+
     '</div>';
 
@@ -104,20 +99,8 @@ var riyadh = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading">Saint Louis, MO</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Saint Louis</b>, is a city in <b>Missourri</b> state in USA. where I continued my undergrad after leaving Spain. '+
-    'I lived in Saint Louis for 2 years. I graduated from the Saint Louis University and '+
-    'got my Bachelors in Computer Engineering.'+
-    '</div>'+
-    '</div>';
-
-  var HB = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading">Huntington Beach, CA</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Huntington Beach</b>, is where I currently live with my husband. I moved to HB after I finished my Masters. '+
-    'I am looking for a job and enjoying taking the <b>Front-End Web Devlopment Nanodegree</b> program from <b>Udacity</b>.'+
+    '<div>'+
+    '<p class="bodyContent"><b>Saint Louis</b>, MO is where I finished my bachelor degree in Computer Engineering.'+
     '</div>'+
     '</div>';
 
@@ -125,16 +108,16 @@ var riyadh = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading">Irvine, CA</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Irvine</b>, is where I currently work. I am working at Edwards Lifescience as a Software Engineer. '+
-    'My work within Automated Software Testing Team to develop automated test script is challenging and exciting.'+
+    '<div>'+
+    '<p class="bodyContent"><b>Irvine</b>, is where I currently work. I\'m a software Engineer working with the Automated Software Testing Team '+
+    'at Edwards Lifescience.'+
     '</div>'+
     '</div>';
 
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
   // jump to Education //
   $('#edu').click(function() {
@@ -144,7 +127,7 @@ $(document).ready(function() {
   $('#pro').click(function() {
     window.location = 'index.html#projects';
   });
-  // jump to Work Experience // 
+  // jump to Work Experience //
   $('#work').click(function() {
     window.location = 'index.html#workExperience';
   });
@@ -209,9 +192,9 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
@@ -224,10 +207,7 @@ function initializeMap() {
 
     // initializes an empty array
     var locations = [];
-
-    //adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
-
+    
     // iterates through school locations and appends each location to
     // the locations array
     for (var school=0; school < education.schools.length; school++) {
@@ -280,30 +260,25 @@ function initializeMap() {
         var infoWindow = new google.maps.InfoWindow({
           content: STL
         });
-      }  
-      else if (marker.title =='Huntington Beach, CA, USA') {
-        var infoWindow = new google.maps.InfoWindow({
-          content: HB
-        });
-      }    
+      }
       else if (marker.title =='Riyadh Saudi Arabia') {
         var infoWindow = new google.maps.InfoWindow({
           content: riyadh
         });
-      }    
+      }
       else if (marker.title =='Mecca Saudi Arabia') {
         var infoWindow = new google.maps.InfoWindow({
           content: makkah
         });
-      }    
+      }
       else if (marker.title =='Irvine, CA, USA') {
         var infoWindow = new google.maps.InfoWindow({
           content: Irvine
         });
-      }   
-      infoWindow.open(map, marker);  
+      }
+      infoWindow.open(map, marker);
     });
-    
+
 
     // this is where the pin actually gets added to the map.
     // bounds.extend() takes in a map location object
@@ -333,7 +308,7 @@ function initializeMap() {
     // creates a Google place search service object. PlacesService does the work of
     // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
- 
+
     // Iterates through the array of locations, creates a search object for each location
     for (var place=0; place < locations.length; place++) {
 
@@ -368,10 +343,6 @@ function initializeMap() {
   pinPoster(locations);
 
 }
-
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);

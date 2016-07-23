@@ -14,6 +14,9 @@ h6 {
   font-family: 'Raleway', sans-serif;
 }
 
+body {
+  font-size: 18px;
+}
 .clear-fix {
   overflow: auto;
 }
@@ -26,6 +29,10 @@ h6 {
 .work-entry,
 .project-entry {
   padding: 1% 5% 0 5%;
+}
+
+.projs, .desc-Start {
+  padding-left: 5vw;
 }
 
 h1 {
@@ -59,7 +66,7 @@ h5 {
 
 .date-text {
   font-style: italic;
-  font-size: 14px;
+  font-size: 16px;
   color: gray;
   line-height: 16px;
   float: left;
@@ -67,7 +74,7 @@ h5 {
 
 .location-text {
   font-style: bold;
-  font-size: 14px;
+  font-size: 16px;
   color: #00bfa5;
   line-height: 16px;
   float: right;
@@ -81,7 +88,7 @@ button {
 }
 
 p {
-  font-size: 14px;
+  font-size: 18px;
   color: #333;
   line-height: 21px;
 }
@@ -167,11 +174,20 @@ ul {
   padding-top: 2%
 }
 
+li {
+  font-size: 18px;
+}
+
 .biopic {
   float: left;
   padding: 10px;
   width: 200px;
 }
+
+.bullets {
+    list-style-type: disc;
+  }
+
 
 img {
   padding: 2vw;
@@ -183,7 +199,7 @@ span {
 
 .welcome-message {
   font-style: italic;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   line-height: 28px;
   padding: 0;
@@ -234,8 +250,14 @@ span {
 
 #firstHeading {
   color: #00bfa5;
-  font-size: 25px;
+  font-size: 15px;
+  padding: 0;
 }
+
+.bodyContent {
+  font-size: 13px;
+}
+
 
 #lets-connect {
   text-align: center;
@@ -244,16 +266,7 @@ span {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    /*margin-top: 5%;*/
-  }
-}
-
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    /*margin-top: 5%;*/
-  }
 
   #role {
     display: block;
@@ -295,7 +308,7 @@ span {
 
   .biopic {
     float: none;
-    margin-left: 10rem;
+    margin-left: 30vw;
   }
 
   .full-name{
@@ -303,7 +316,13 @@ span {
   }
 
   .welcome-message {
-    display: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  #stretch {
+    width: 100%;
   }
 
   .flex-menu li{
@@ -316,12 +335,16 @@ span {
   #skills-h3,
   .biopic {
     display: block;
-    margin-left: 25rem;
   }
 
   .welcome-message {
-    display: inline-block;
-    width: 130%;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  #stretch {
+    width: 100%;
   }
 
   .flex-menu {
@@ -336,5 +359,4 @@ span {
   ul {
     margin-top: 2%;
   }
-
 }

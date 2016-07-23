@@ -2,22 +2,21 @@
 /** Biography info object */
 var bio = {
     'name': 'Nidaa Bugis',
-    'role': 'Masters in Computer Engineering',
-    'contacts': {     
+    'role': 'Junior Software Engineer',
+    'contacts': {
         'mobile' : '314-498-0776',
         'email': 'bent.al7ejaz90@gmail.com',
         'gitHub' : 'https://github.com/nbogis',
-        'twitter' : '',
-        'website' : 'http://nidaabugis.weebly.com',
+        'linkedIn' : 'https://www.linkedin.com/in/nidaabugis',
         'location': 'Huntington Beach, CA'},
-    'welcomeMessage' : 'Dynamic Computer engineering graduate with portfolio of success delivering on schedule, dependable, and high precession results. Adept at analyzing and organizing challenges collaboratively and independently with creative problem solving, and strong aptitude to learn new technologies. Self-motivated and highly ambitious to growing as a professional through academic understanding and practical applications.',
-    'skills': ['HTML5', 'CSS3', 'JavaScript','Git', 'GitHub', 'jQuery', 'Bootstrap', ' knockout', 'Grunt'],
+    'welcomeMessage' : 'Software engineer with portfolio of success delivering on schedule, dependable, and high precession results. Adept at analyzing and organizing challenges collaboratively and independently with creative problem solving, and strong aptitude to learn new technologies. Self-motivated and highly ambitious to growing as a professional through academic understanding and practical applications.',
+    'skills': ['HTML5', 'CSS3', 'JavaScript', 'Ruby', 'Git', 'GitHub', 'jQuery', 'Bootstrap', ' knockout', 'Grunt'],
     'biopic': ['images_src/profile_2x.jpg','images/profile_1x.jpg','images_src/profile_2x.jpg','my profile picture'],
 };
 
 /** bio display function using encapsulation*/
 bio.display = function() {
-    /** add name and role to the header */ 
+    /** add name and role to the header */
     var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
     $('#header').prepend(formattedRole);
 
@@ -38,15 +37,16 @@ bio.display = function() {
         $('#topContacts').append(formattedEmail);
     }
 
-    if (bio.contacts.twitter.length) {
-        var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-        $('#topContacts').append(formattedTwitter);
-    }
-
-    if (bio.contacts.gitHub.length) { 
+    if (bio.contacts.gitHub.length) {
         var formattedGit = HTMLgithub.replace('%data%', bio.contacts.gitHub);
         formattedGit = formattedGit.replace('#',bio.contacts.gitHub);
         $('#topContacts').append(formattedGit);
+    }
+
+    if (bio.contacts.linkedIn.length) {
+        var formattedLinked = HTMLlinkedIn.replace('%data%', bio.contacts.linkedIn);
+        formattedLinked = formattedLinked.replace('#',bio.contacts.linkedIn);
+        $('#topContacts').append(formattedLinked);
     }
 
     if (bio.contacts.location !== '') {
@@ -90,15 +90,16 @@ bio.display = function() {
         $('#footerContacts').append(formattedEmail);
     }
 
-    if (bio.contacts.twitter.length) {
-        var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-        $('#footerContacts').append(formattedTwitter);
-    }
-
-    if (bio.contacts.gitHub.length) { 
+    if (bio.contacts.gitHub.length) {
         var formattedGit = HTMLgithub.replace('%data%', bio.contacts.gitHub);
         formattedGit = formattedGit.replace('#',bio.contacts.gitHub);
         $('#footerContacts').append(formattedGit);
+    }
+
+    if (bio.contacts.linkedIn.length) {
+        var formattedLinked = HTMLlinkedIn.replace('%data%', bio.contacts.linkedIn);
+        formattedLinked = formattedLinked.replace('#',bio.contacts.linkedIn);
+        $('#footerContacts').append(formattedLinked);
     }
 };
 
@@ -114,17 +115,17 @@ bio.displaymenu = function() {
     tmp = tmp.replace('%data%','Education');
     $('#mymenu').append(tmp);
 
-    /** add projects menu to scroll to work experience */ 
+    /** add projects menu to scroll to work experience */
     var tmp = menu.replace('%data%','pro');
     tmp = tmp.replace('%data%','Projects');
     $('#mymenu').append(tmp);
 
-    /** add work menu to scroll to work experience */ 
+    /** add work menu to scroll to work experience */
     var tmp = menu.replace('%data%','work');
     tmp = tmp.replace('%data%','workExperience');
     $('#mymenu').append(tmp);
 
-    /** add map menu to scroll to where I've lived and worked */ 
+    /** add map menu to scroll to where I've lived and worked */
     tmp = menu.replace('%data%','mp');
     tmp = tmp.replace('%data%','Where I\'ve Lived and Worked');
     $('#mymenu').append(tmp);
@@ -255,14 +256,14 @@ education.display = function() {
             $('.education-entry:last').append(HTMLOnlineprojStart);
             var formattedProj;
             for (var j=0; j < education.OnlineCourses[i].projects.length; j++){
-                formattedProj = HTMLonlineprojects.replace('%data%', '- ' + education.OnlineCourses[i].projects[j]);
+                formattedProj = HTMLonlineprojects.replace('%data%', education.OnlineCourses[i].projects[j]);
                $('.projs:last').append(formattedProj);
             }
         }
     }
 };
 
-/** work object */ 
+/** work object */
 var work = {
     'jobs' : [
         {
@@ -315,7 +316,7 @@ work.display = function() {
             formattedEmpl = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
             formattedEmpl = formattedEmpl .replace('#', work.jobs[i].url);
             formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[i].title);
-            string = formattedEmpl + formattedTitle; 
+            string = formattedEmpl + formattedTitle;
             /** append to work-entry */
             $('.work-entry:last').append(string);
 
@@ -327,7 +328,7 @@ work.display = function() {
 
             $('.work-entry:last').append(HTMLworkDescStart);
             for (var j=0; j < work.jobs[i].description.length; j++){
-                formattedDes = HTMLworkDescription.replace('%data%', '- '+work.jobs[i].description[j]);
+                formattedDes = HTMLworkDescription.replace('%data%', work.jobs[i].description[j]);
                 // $('#desc').append(formattedDes);
                 $('.desc-Start:last').append(formattedDes);
             }
@@ -335,7 +336,7 @@ work.display = function() {
     }
 };
 
-/** projects object */ 
+/** projects object */
 var projects = {
     'projects' : [
         {
@@ -370,7 +371,7 @@ var projects = {
             'collecting jewels, displaying score, music and sound effects, displaying texts. All of the game functionalities were implemented in Javascript. ',
             'images' : ['images_src/frogger_2x.jpg','images/frogger_1x.jpg','images_src/frogger_2x.jpg','my frogger online game']
             },
-            
+
             {
             'school' : 'Edx - The University of Texas at Austin',
             'title' : 'Space Invaders',
@@ -381,7 +382,7 @@ var projects = {
             'images' : ['images_src/IMG_2755_1024_2x.jpg','images/IMG_2755_1024_1x.jpg','images_src/IMG_2755_1024_2x.jpg','my space invader game']
             },
             {
-            'school' : 'The George Washington University', 
+            'school' : 'The George Washington University',
             'title' : 'Chapel\'s Performance',
             'course' : 'Introduction to High-Performance Computing',
             'url' : 'http://www.gwu.edu/',
