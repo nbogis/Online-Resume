@@ -63,7 +63,7 @@ var riyadh = '<div id="content">'+
       '<h1 id="firstHeading" class="firstHeading">Riyadh, Saudi Arabia</h1>'+
       '<div">'+
       '<p class="bodyContent"><b>Riyadh</b>, is the capital city of <b>Saudi Arabia</b> and it is '+
-      'where I grew up.'+
+      'where I grew up.</p>'+
       '</div>'+
       '</div>';
 
@@ -72,7 +72,7 @@ var riyadh = '<div id="content">'+
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Makkah, Saudi Arabia</h1>'+
     '<div">'+
-    '<p class="bodyContent"><b>Makkah</b>, is the holy city for Muslims. It is where I was born and where my family are from. '+
+    '<p class="bodyContent"><b>Makkah</b>, is the holy city for Muslims. It is where I was born and where my family are from.</p>'+
     '</div>'+
     '</div>';
 
@@ -81,7 +81,7 @@ var riyadh = '<div id="content">'+
     '</div>'+
     '<h1 id="firstHeading">Madrid, Spain</h1>'+
     '<div>'+
-    '<p class="bodyContent"><b>Madrid</b>, is the place is my second home country where I lived for 7 years and started collage . ' +
+    '<p class="bodyContent"><b>Madrid</b>, is my second home country and where I lived for 7 years and started collage . </p>' +
     '</div>'+
     '</div>';
 
@@ -91,7 +91,7 @@ var riyadh = '<div id="content">'+
     '<h1 id="firstHeading">Washington, DC</h1>'+
     '<div>'+
     '<p class="bodyContent"><b>Washington</b>, is where I obtained my Masters degree in <b>Computer Engineering</b> from '+
-    'the George Washington University in downtown DC. '+
+    'the George Washington University in downtown DC.</p>'+
     '</div>'+
     '</div>';
 
@@ -100,7 +100,7 @@ var riyadh = '<div id="content">'+
     '</div>'+
     '<h1 id="firstHeading">Saint Louis, MO</h1>'+
     '<div>'+
-    '<p class="bodyContent"><b>Saint Louis</b>, MO is where I finished my bachelor degree in Computer Engineering.'+
+    '<p class="bodyContent"><b>Saint Louis</b>, MO is where I finished my bachelor degree in Computer Engineering.</p>'+
     '</div>'+
     '</div>';
 
@@ -109,7 +109,7 @@ var riyadh = '<div id="content">'+
       '</div>'+
       '<h1 id="firstHeading">Huntington Beach, CA</h1>'+
       '<div>'+
-      '<p class="bodyContent"><b>Huntington Beach</b>, is where I currently live.'+
+      '<p class="bodyContent"><b>Huntington Beach</b>, is where I currently live.</p>'+
       '</div>'+
       '</div>';
 
@@ -118,8 +118,7 @@ var riyadh = '<div id="content">'+
     '</div>'+
     '<h1 id="firstHeading">Irvine, CA</h1>'+
     '<div>'+
-    '<p class="bodyContent"><b>Irvine</b>, is where I currently work. I\'m a software Engineer working with the Automated Software Testing Team '+
-    'at Edwards Lifescience.'+
+    '<p class="bodyContent"><b>Irvine</b>, is where I currently work. I\'m a software Engineer working with the Automated Software Testing Team at Edwards Lifescience.</p>'+
     '</div>'+
     '</div>';
 
@@ -258,7 +257,7 @@ function initializeMap() {
 
     // show info window of the clicked marker on the map //
     google.maps.event.addListener(marker, 'click', function() {
-      if (marker.title =='Madrid, Madrid, Spain') {
+      if (marker.title =='Madrid, Spain') {
         var infoWindow = new google.maps.InfoWindow({
           content: madrid
         });
@@ -268,7 +267,7 @@ function initializeMap() {
           content: DC
         });
       }
-      else if (marker.title =='St Louis, MO, USA') {
+      else if (marker.title =='St. Louis, MO, USA') {
         var infoWindow = new google.maps.InfoWindow({
           content: STL
         });
@@ -348,6 +347,12 @@ function initializeMap() {
         query: 'Makkah, Saudi Arabia'
       };
     service.textSearch(request, callback);
+
+    // add Madrid to the map //
+    var request = {
+        query: 'Madrid, Madrid, Spain'
+      };
+    service.textSearch(request, callback);
   }
 
   // Sets the boundaries of the map based on pin locations
@@ -358,7 +363,7 @@ function initializeMap() {
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
   pinPoster(locations);
-
+  console.log("locations = "+locations);
 }
 
 // Calls the initializeMap() function when the page loads
